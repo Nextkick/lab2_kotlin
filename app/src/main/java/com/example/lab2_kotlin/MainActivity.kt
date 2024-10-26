@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         inputForm.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if (s.isNullOrEmpty()) {
-                    outputLabel.text = getString(R.string.morda)
+                    outputLabel.text = getString(R.string.face)
                 } else {
                     try {
                         val epsilon = s.toString().toDoubleOrNull()
