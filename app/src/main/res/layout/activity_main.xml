@@ -5,12 +5,12 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="MainActivity">
+    tools:context="com.example.lab2_kotlin.MainActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/main_form_layout"
-        android:layout_width="144dp"
-        android:layout_height="50dp"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="8dp"
@@ -22,9 +22,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/main_form"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="75dp"
             android:textAlignment="center"
-            android:textSize="28sp"
+            android:textSize="24sp"
             android:hint="@string/count_epsilon"
             android:inputType="numberDecimal"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -32,11 +32,12 @@
     <TextView
         android:id="@+id/main_label"
         android:layout_width="332dp"
-        android:layout_height="85dp"
+        android:layout_height="150dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:text="@string/face"
+        android:gravity="center"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold|italic"

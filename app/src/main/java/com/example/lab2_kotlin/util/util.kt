@@ -1,16 +1,16 @@
 package com.example.lab2_kotlin.util
 
-fun calculate(epsilon: Double): Triple<Double, Double, Int> {
-    var sum = 0.0
-    var lastTerm = 0.0
+fun calculate(epsilon: Float): Triple<Float, Float, Int> {
+    var sum = 0f
+    var lastTerm = 0f
     var iterations = 0
 
-    for (n in 1..1000) {
-        lastTerm = 1.0 / (n * n)
+    for (n in 1..100) {
+        lastTerm = 1f / (n * n)
         sum += lastTerm
         iterations++
 
-        if (lastTerm < epsilon) {
+        if (lastTerm <= epsilon) {
             break
         }
     }

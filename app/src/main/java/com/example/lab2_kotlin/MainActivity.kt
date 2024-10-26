@@ -3,6 +3,7 @@ package com.example.lab2_kotlin
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -32,20 +33,28 @@ class MainActivity : AppCompatActivity() {
                     outputLabel.text = getString(R.string.face)
                 } else {
                     try {
-                        val epsilon = s.toString().toDoubleOrNull()
+                        val epsilon = s.toString().toFloatOrNull()
                         if (epsilon != null) {
-                            if (epsilon > 1) {
-                                outputLabel.text = getString(R.string.epsilon_error_text)
+                            if (epsilon <= 0) {
+                                outputLabel.text = getString(R.string.epsilon_error2_text)
+                            } else if (epsilon > 1) {
+                                outputLabel.text = getString(R.string.epsilon_error1_text)
                             } else {
+                                // Здесь epsilon находится в диапазоне (0, 1]
                                 val (sum, lastTerm, iterations) = calculate(epsilon)
-                                outputLabel.text = getString(R.string.result, getString(R.string.sum), sum,
-                                    getString(R.string.last_term), lastTerm,getString(R.string.iterations), iterations)
+                                outputLabel.textAlignment = View.TEXT_ALIGNMENT_TEXT_START
+                                outputLabel.text = getString(
+                                    R.string.result,
+                                    getString(R.string.sum), sum,
+                                    getString(R.string.last_term), lastTerm,
+                                    getString(R.string.iterations), iterations
+                                )
                             }
                         }
                     } catch (ex: NumberFormatException) {
                         outputLabel.text = getString(R.string.not_number_ex_text)
                     } catch (ex: Exception) {
-                        outputLabel.text = ex.message
+                        outputLabel.text = ex.message ?: "Произошла ошибка"
                     }
                 }
             }
