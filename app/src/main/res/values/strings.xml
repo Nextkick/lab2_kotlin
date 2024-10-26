@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">lab2_kotlin</string>
     <string name="epsilon_label">Введите значение epsilon</string>
-    <string name="morda">q:)</string>
+    <string name="face">q:)</string>
+    <string name="count_epsilon">Значение epsilon</string>
     <string name="epsilon_error_text">Значение epsilon не должно превышать 1.</string>
     <string name="image_description">lab 2 variant 1 task text</string>
     <string name="not_number_ex_text">It is not number</string>
